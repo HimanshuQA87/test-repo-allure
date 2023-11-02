@@ -19,7 +19,7 @@ jobs:
       - name: API component tests
         run: |
           cd test-repo-allure
-          pytest -v -s 
+          pytest -v -s --alluredir=build/allure-results
           
       - name: Load test report history
         uses: actions/checkout@v3
