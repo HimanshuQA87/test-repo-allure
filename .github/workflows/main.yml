@@ -29,5 +29,8 @@ jobs:
       - name: Create Artifact Link
         run: |
             gh pr comment ${{ github.event.number }} -b "Allure Report: [View Allure Report](https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}/artifacts/allure-reports)"
+            if: success() && github.event_name == 'pull_request'
+            env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           
