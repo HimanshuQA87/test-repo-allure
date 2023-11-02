@@ -10,13 +10,11 @@ jobs:
           python-version: 3.11
       - name: Install Requirements
         run: |
-          cd test-repo-allure
           python -m pip install
           pip install pytest
           pip install allure-pytest
 
       - name: API component tests
         run: |
-          cd test-repo-allure
           pytest -v -s --alluredir=reports
           
