@@ -36,7 +36,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: test-repo-allure/reports/*
+          allure_results: test-repo-allure/reports
 
       - name: Publish test report
         uses: peaceiris/actions-gh-pages@v3
