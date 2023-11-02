@@ -28,5 +28,6 @@ jobs:
           path: test-repo-allure/reports
       - name: Create Artifact Link
         run: |
-            echo "Allure report is available at: ${{ github.server }}/HimanshuQA87/test-repo-allure/actions/runs/${{ github.run_id }}/artifacts/allure-report"
+            gh pr comment ${{ github.event.number }} -b "Allure Report: [View Allure Report](https://github.com/${{ github.repository }}/actions/artifacts/${{ github.run_id }}/artifacts/allure-reports)"
+
           
