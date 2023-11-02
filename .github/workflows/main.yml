@@ -21,6 +21,10 @@ jobs:
         run: |
           cd test-repo-allure
           pytest -v -s --alluredir=target/allure-results
+      - name : Check Allure results folder
+        run: |
+          ls -l test-repo-allure/target/allure-results
+        working-directory: test-repo-allure
           
       # #Allure
       # - name: Get Allure history
