@@ -20,7 +20,7 @@ jobs:
       - name: API component tests
         run: |
           cd test-repo-allure
-          pytest -v -s --alluredir=reports
+          pytest -v -s --alluredir=target/allure-results
           
       #Allure
       - name: Get Allure history
