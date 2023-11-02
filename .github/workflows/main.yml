@@ -1,8 +1,22 @@
 name: hello-world
 'on': push
 jobs:
-  my-job:
+  Component-Tests:
     runs-on: ubuntu-latest
     steps:
-      - name: component tests
-        run: pytest -v -s
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11
+      - name: Install Requirements
+        run: |
+          cd test-repo-allure
+          python -m pip install
+          pip install pytest
+          pip install allure-pytest
+
+      - name: API component tests
+        run: |
+          cd test-repo-allure
+          pytest -v -s --alluredir=reports
+          
