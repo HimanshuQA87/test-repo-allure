@@ -16,5 +16,6 @@ jobs:
 
       - name: API component tests
         run: |
+          cd test-repo-allure/test-repo-allure 
           pytest -v -s --alluredir=reports
           
