@@ -21,4 +21,12 @@ jobs:
         run: |
           cd test-repo-allure
           pytest -v -s --alluredir=reports
+      - name: Archive Allure Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: test-repo-allure/reports
+      - name: Create Artifact Link
+        run: |
+            echo "Allure report is available at: ${{ github.server }}/HimanshuQA87/test-repo-allure/actions/runs/${{ github.run_id }}/artifacts/allure-report"
           
