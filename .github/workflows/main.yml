@@ -23,8 +23,7 @@ jobs:
           pytest -v -s --alluredir=target/allure-results
       - name : Check Allure results folder
         run: |
-          ls -l test-repo-allure/target/allure-results
-        working-directory: test-repo-allure
+          ls -l target/allure-results
           
       # #Allure
       # - name: Get Allure history
