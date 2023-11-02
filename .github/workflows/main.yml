@@ -25,9 +25,10 @@ jobs:
           
       - name: Install Allure CLI
         run: |
-          sudo apt-add-repository ppa:qameta/allure
-          sudo apt-get update
-          sudo apt-get install allure
+          wget https://github.com/allure-framework/allure2/releases/download/2.15.0/allure-2.15.0.tgz
+          tar -xzvf allure-2.15.0.tgz
+          sudo ln -s allure-2.15.0/bin/allure /usr/bin/allure
+          allure --version # Verify installation
       - name: Generate Allure report
         run: |
           allure generate allure-results --clean -o allure-report
