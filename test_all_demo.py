@@ -7,3 +7,4 @@ def test_two():
 
 def test_three():
     print("test three")
+    print("third added")
